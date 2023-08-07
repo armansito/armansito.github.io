@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Renderer</title>
+    <style>
+      body {
+        background: darkslategray;
+      }
+      canvas {
+        padding: 0;
+        margin: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module">
+      import init, { main } from "./pkg/wgpu_viewer.js";
+      init().then(() => { main(); });
+    </script>
+  </body>
+</html>
