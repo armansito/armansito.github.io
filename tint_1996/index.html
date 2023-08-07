@@ -12,12 +12,25 @@
         margin: auto;
         display: block;
       }
+      #error-msg {
+        color: lightgray;
+        padding: 0;
+        font-size: 1.5em;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <script type="module">
       import init, { main } from "./pkg/wgpu_viewer.js";
-      init().then(() => { main(); });
+      if (typeof navigator.gpu === 'undefined') {
+        let errorDiv = document.getElementById('error-msg');
+        errorDiv.innerHTML = '⚠️  This browser does not support WebGPU ⚠️ ';
+        errorDiv.style.paddingTop = '1.5em';
+      } else {
+        init().then(() => { main(); });
+      }
     </script>
+    <div id='error-msg'></div>
   </body>
 </html>
