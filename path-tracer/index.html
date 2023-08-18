@@ -57,6 +57,8 @@
         init().then(() => {
             var proxy = run_wgpu_viewer(window.innerWidth, window.innerHeight);
             var canvas = document.getElementById('wgpu-canvas');
+            canvas.setAttribute('tabindex', '0');
+            canvas.focus();
             function resizeCanvas(event) {
                 proxy.resize_viewport(window.innerWidth, window.innerHeight);
             }
