@@ -6,12 +6,12 @@
   "version": "0.1.0",
   "license": "MIT OR Apache-2.0",
   "files": [
-    "wgpu_viewer_bg.wasm",
-    "wgpu_viewer.js",
-    "wgpu_viewer.d.ts"
+    "wgpu_viewer_lib_bg.wasm",
+    "wgpu_viewer_lib.js",
+    "wgpu_viewer_lib.d.ts"
   ],
-  "module": "wgpu_viewer.js",
-  "types": "wgpu_viewer.d.ts",
+  "module": "wgpu_viewer_lib.js",
+  "types": "wgpu_viewer_lib.d.ts",
   "sideEffects": [
     "./snippets/*"
   ]

@@ -64,7 +64,7 @@
         </div>
     </div>
     <script type="module">
-      import init, { run_wgpu_viewer } from "./pkg/wgpu_viewer.js";
+      import init, { run_wgpu_viewer } from "./pkg/wgpu_viewer_lib.js";
       if (typeof navigator.gpu === 'undefined') {
         let errorDiv = document.getElementById('error-msg');
         errorDiv.innerHTML = '⚠️  This browser does not support WebGPU ⚠️ ';
@@ -75,6 +75,7 @@
             var proxy = run_wgpu_viewer(window.innerWidth, window.innerHeight);
             var canvas = document.getElementById('wgpu-canvas');
             canvas.setAttribute('tabindex', '0');
+            canvas.style = "";
             canvas.focus();
             function resizeCanvas(event) {
                 proxy.resize_viewport(window.innerWidth, window.innerHeight);
